@@ -272,6 +272,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :twitter, 'TWITTER_API_KEY', 'TWITTER_API_SECRET', scope: 'email', oauth_callback: "#{ENV.fetch("HOST")}/api/v1/auth/twitter/callback"
+  config.omniauth :google_oauth2, 'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', scope: 'email', redirect_url: "#{ENV.fetch("HOST")}/api/v1/auth/google-oauth2/callback"
+  OmniAuth.config.logger = Rails.logger if Rails.env.development?
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

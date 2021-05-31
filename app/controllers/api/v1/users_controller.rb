@@ -13,30 +13,25 @@ class Api::V1::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def create
-    @user = User.new(user_prams)
+  # def create
+  #   @user = User.new(user_prams)
 
-    if @user.save
-      render json: {status: 'success', data: users}
+  #   if @user.save
+  #     render json: {status: 'success', data: users}
 
-    else
-      render json: { error: @user.errors.full_messages.join('') },
-             status: :unprocessable_entity
+  #   else
+  #     render json: { error: @user.errors.full_messages.join('') },
+  #            status: :unprocessable_entity
 
-    end
-  end
+  #   end
+  # end
 
   def update
-    if @user.update(user_params)
-      render :show, status: :ok, location: @user
-    else
-      render :json, @user.errors, status: :unprocessable_entity
-    end
   end
 
-  def destroy
-    @user.destroy
-  end
+  # def destroy
+  #   @user.destroy
+  # end
   
 
   private

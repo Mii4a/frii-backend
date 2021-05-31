@@ -21,3 +21,7 @@ User.create!(
     password_confirmation: 'password'
   )
 end
+
+tag_samples = [
+  {tag_name: "aa"}
+]
