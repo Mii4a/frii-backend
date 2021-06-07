@@ -25,7 +25,7 @@ ADD ./Gemfile $APP_ROOT/Gemfile
 ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
 # mimemagic用のパッケージをインストール
-RUN apt-get add --update --no-cache shared-mime-info
+RUN apt-get install shared-mime-info
 
 # bundle installを実行しローカルPCのファイルたちをコンテナ内にコピー
 RUN bundle install

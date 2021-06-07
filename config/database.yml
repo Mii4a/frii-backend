@@ -17,6 +17,6 @@ test:
 
 production:
   <<: *default
-  database: sample_production
-  username: <%= ENV['APP_DATABASE_USER'] %>
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  database: <%= ENV.fetch("DB_NAME") %>
+  username: <%= ENV.fetch("DB_USERNAME") %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>

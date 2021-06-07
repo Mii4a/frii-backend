@@ -57,7 +57,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.require(:registration).permit(:sign_up, keys: [:name, :email, :password, :password_confirmation, :tag_name)
+    devise_parameter_sanitizer.require(:registration).permit(:sign_up, keys: [:name, :email, :password, :password_confirmation, :tag_name])
   end
 
   def confirm_conf_sign_up_params_not_nil
