@@ -31,6 +31,10 @@ RUN apt-get install shared-mime-info
 RUN bundle install
 ADD . $APP_ROOT
 
+COPY startup.sh ./startup.sh
+RUN chmod 704 ./startup.sh
+ENTRYPOINT [ "startup.sh" ]
+
 # コンテナがlistenするポート番号
 EXPOSE 3000
 
